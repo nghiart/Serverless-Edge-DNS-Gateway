@@ -1,5 +1,10 @@
 {
   "version": 1,
-  "include": ["/dns-query", "/debug", "/apple"],
-  "exclude": []
+  "description": "Serverless Edge DNS Gateway",
+  "routes": [
+    { "pattern": "/dns-query", "entrypoint": "functions/[[path]].js" },
+    { "pattern": "/debug", "entrypoint": "functions/[[path]].js" },
+    { "pattern": "/apple", "entrypoint": "functions/[[path]].js" },
+    { "pattern": "/*", "entrypoint": "functions/[[path]].js" }
+  ]
 }
